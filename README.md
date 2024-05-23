@@ -2,8 +2,29 @@
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Recommended Setup
+## Getting Started
+### Prerequisites
+- Node.js and npm installed on your local environment.
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+### Installation
+#### 1. Clone the repository
+```properties
+git clone https://github.com/anuskam/yuki-technical-test
+```
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+#### 2. Navigate to the project directory:
+```properties
+cd yuki-technical-test
+```
+
+#### 3. Install dependencies:
+```properties
+npm install
+```
+## Usage
+#### 1. Start the development server:
+```properties
+npm run dev
+```
+
+#### And enjoy the web! 🚀
