@@ -20,13 +20,13 @@ export default {
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
 import IPlanet from '../api/interfaces/IPlanet.interface'
-import { getFilmsTitle } from '../api/endpoints/star_wars_api'
+import { getFilmsByTitle } from '../api/endpoints/star_wars_api'
 const props = defineProps<{ 
   planet: IPlanet
 }>()
 const filmTitles: Ref<string[]> = ref([]);
 
 onMounted(async() => {
-  filmTitles.value = await getFilmsTitle(props.planet.films)
+  filmTitles.value = await getFilmsByTitle(props.planet.films)
 })
 </script>
