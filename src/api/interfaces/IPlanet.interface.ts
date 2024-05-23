@@ -4,11 +4,11 @@ export default interface IPlanet {
   films: string[]
   gravity?: string
   name: string
-  orbitalPeriod?: string
+  orbital_period?: string
   population?: string
   residents?: string[]
-  rotationPeriod?: string
-  surfaceWater?: string
+  rotation_period?: string
+  surface_water?: string
   terrain?: string
 
 }
