@@ -27,4 +27,10 @@ npm install
 npm run dev
 ```
 
+#### 2. To run unit test
+```properties
+npm run test
+```
+
+
 #### And enjoy the web! 🚀

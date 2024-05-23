@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { API_BASE_URL, PLANETS, FILMS } from '../constants'
+import { API_BASE_URL, PLANETS } from '../constants'
 import IPlanet from '../interfaces/IPlanet.interface'
 
 export const getPlanets = async(): Promise<IPlanet[]> => {
@@ -11,17 +11,7 @@ export const getPlanets = async(): Promise<IPlanet[]> => {
   }
 }
 
-export const getFilms = async() => {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/${FILMS}`)
-    console.log('FILMS', response.data.results)
-    return response.data.results
-  } catch (error: any) {
-    return error.response.status
-  }
-}
-
-export const getFilmsTitle = async(filmUrls: string[]): Promise<string[]> => {
+export const getFilmsByTitle = async(filmUrls: string[]): Promise<string[]> => {
   try {
     const films = filmUrls.map(url => axios.get(url))
     const responses = await axios.all(films)
@@ -31,10 +21,19 @@ export const getFilmsTitle = async(filmUrls: string[]): Promise<string[]> => {
   }
 }
 
+export const getResidentsByName = async(residentUrls: string[]): Promise<string[]> => {
+  try {
+    const residents = residentUrls.map(url => axios.get(url))
+    const responses = await axios.all(residents)
+    return responses.map(response => response.data.name)
+  } catch (error: any) {
+    return error.response.status
+  }
+}
+
 export const searchPlanet = async(searchQuery: string) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/${PLANETS}/?search=${searchQuery}`)
-    console.log('response', response.data.results)
     return response.data.results
   } catch (error: any) {
     return error.response.status
