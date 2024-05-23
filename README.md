@@ -34,3 +34,6 @@ npm run test
 
 
 #### And enjoy the web! 🚀
+#### Information
+I've enjoyed this test, and I love this API. The component is a bit slow but it works. I would have liked to have more time for the styles, but I preferred to show you the code. I've had some issues with the Vite + Jest environment, but I've managed to sort it out, and I've learned a lot about dependencies in the process. I've done two unit tests, one for each component. The test for the first component is working, but the one for the second component isn't due to loading times. Nevertheless, I've left it written. Thank you!!
+
