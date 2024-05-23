@@ -4,7 +4,7 @@
     <router-link :to="{name: 'SearchPlanetsView'}" class="flex justify-end">
       <button class="bg-white p-2 rounded">Search planets</button>
     </router-link>
-    <div v-if="isLoading" class="text-white">Loading...</div>
+    <div v-if="isLoading" class="text-white text-center text-3xl">Loading...</div>
     <div v-else class="flex flex-wrap justify-center mt-4">
       <PlanetDetails v-for="(planet, index) in planets" :key="index" :planet="planet"/>
     </div>
