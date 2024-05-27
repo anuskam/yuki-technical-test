@@ -54,24 +54,23 @@ export default {
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import type { Ref } from 'vue'
 import IPlanet from '../api/interfaces/IPlanet.interface'
 import { searchPlanet, getFilmsByTitle, getResidentsByName } from '../api/endpoints/star_wars_api'
 
-const searchQuery: Ref<string> = ref('')
-const planet: Ref<IPlanet | null> = ref(null)
-const isLoading: Ref<boolean> = ref(false)
-const isFound: Ref<boolean> = ref(true)
+// Declarar el tipado de las variables después del ref
+const searchQuery = ref<string>('')
+const planet = ref<IPlanet | null>(null)
+const isLoading = ref<boolean>(false)
+const isFound = ref<boolean>(true)
 
-const loadPlanets = async() => {
-  if (!searchQuery.value) isFound.value = false
-  isLoading.value = true
-
+const loadPlanets = () => {
+  if (!searchQuery.value) return
   searchPlanets()
 }
 
 const searchPlanets = async() => {
   try{
+    isLoading.value = true
     const planets = await searchPlanet(searchQuery.value)
     if (planets.length === 0) {
       planet.value = null
@@ -94,7 +93,6 @@ const searchPlanets = async() => {
 
 onMounted(async () => {
   loadPlanets()
-  isLoading.value = false
 })
 
 
